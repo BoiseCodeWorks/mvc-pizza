@@ -3,8 +3,8 @@ import store from "../store.js";
 
 //Public
 class PizzasService {
-  makePizza(newPizza) {
-    store.State.pizzas.push(newPizza);
+  makePizza(rawPizza) {
+    store.State.pizzas.push(new Pizza(rawPizza));
   }
 }
 

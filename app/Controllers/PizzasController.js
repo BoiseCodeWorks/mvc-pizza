@@ -3,9 +3,11 @@ import store from "../store.js";
 
 function _draw() {
   let pizzas = store.State.pizzas;
-  pizzas.forEach(p => {
-    console.log(p);
+  let template = "";
+  pizzas.forEach(pizza => {
+    template += pizza.Template;
   });
+  document.querySelector("#pizzas").innerHTML = template;
 }
 _draw();
 
