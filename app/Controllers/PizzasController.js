@@ -13,12 +13,13 @@ _draw();
 
 //Public
 export default class PizzasController {
-  makePizza() {
-    console.log("Making Pizza in Controller");
-    let fakePizza = {
-      title: "MyFav"
+  makePizza(event) {
+    event.preventDefault();
+    let formData = event.target;
+    let newPizza = {
+      title: formData.title.value
     };
-    PizzasService.makePizza(fakePizza);
+    PizzasService.makePizza(newPizza);
     _draw();
   }
 
@@ -26,8 +27,9 @@ export default class PizzasController {
     PizzasService.removePizza(id);
     _draw();
   }
-  addTopping(id) {
-    let topping = "Fake Topping";
+  addTopping(event, id) {
+    event.preventDefault();
+    let topping = event.target.topping.value;
     PizzasService.addTopping(id, topping);
     _draw();
   }

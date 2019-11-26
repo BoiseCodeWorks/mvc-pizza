@@ -16,9 +16,16 @@ export default class Pizza {
         <ul class="card-text">
             ${this.getToppingTemplate()}
         </ul>
-        <button class="btn btn-success" onclick="app.pizzasController.addTopping('${
-          this.id
-        }')">Add Topping</button>
+        <form onsubmit="app.pizzasController.addTopping(event, '${this.id}')">
+        <input
+          type="text"
+          name="topping"
+          placeholder="Topping..."
+          required
+        />
+        <button class="btn btn-success" type="submit">Add Topping</button>
+      </form>
+        
         <button class="btn btn-danger" onclick="app.pizzasController.removePizza('${
           this.id
         }')">Delete</button>

@@ -17,7 +17,15 @@
     <main class="container-fluid">
       <div class="row">
         <div class="col">
-          <button onclick="app.pizzasController.makePizza()">Add Pizza</button>
+          <form onsubmit="app.pizzasController.makePizza(event)">
+            <input
+              type="text"
+              name="title"
+              placeholder="Pizza Title..."
+              required
+            />
+            <button type="submit">Add Pizza</button>
+          </form>
         </div>
       </div>
       <div class="row" id="pizzas"></div>
