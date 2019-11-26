@@ -8,7 +8,7 @@ export default class Pizza {
   }
 
   get Template() {
-    return /*html*/ `
+    return `
     <div class="col-3">
     <div class="card">
       <div class="card-body">
@@ -16,6 +16,9 @@ export default class Pizza {
         <ul class="card-text">
             ${this.getToppingTemplate()}
         </ul>
+        <button onclick="app.pizzasController.removePizza('${
+          this.id
+        }')">Delete</button>
       </div>
     </div>
   </div>

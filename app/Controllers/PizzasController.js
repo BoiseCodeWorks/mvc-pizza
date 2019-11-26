@@ -21,4 +21,9 @@ export default class PizzasController {
     PizzasService.makePizza(fakePizza);
     _draw();
   }
+
+  removePizza(id) {
+    PizzasService.removePizza(id);
+    _draw();
+  }
 }
