@@ -26,4 +26,14 @@ export default class PizzasController {
     PizzasService.removePizza(id);
     _draw();
   }
+  addTopping(id) {
+    let topping = "Fake Topping";
+    PizzasService.addTopping(id, topping);
+    _draw();
+  }
+
+  removeTopping(pizzaId, toppingIndex) {
+    PizzasService.removeTopping(pizzaId, toppingIndex);
+    _draw();
+  }
 }

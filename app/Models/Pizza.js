@@ -16,7 +16,10 @@ export default class Pizza {
         <ul class="card-text">
             ${this.getToppingTemplate()}
         </ul>
-        <button onclick="app.pizzasController.removePizza('${
+        <button class="btn btn-success" onclick="app.pizzasController.addTopping('${
+          this.id
+        }')">Add Topping</button>
+        <button class="btn btn-danger" onclick="app.pizzasController.removePizza('${
           this.id
         }')">Delete</button>
       </div>
@@ -27,8 +30,8 @@ export default class Pizza {
 
   getToppingTemplate() {
     let template = "";
-    this.toppings.forEach(t => {
-      template += `<li>${t}</li>`;
+    this.toppings.forEach((topping, index) => {
+      template += `<li>${topping} <span onclick="app.pizzasController.removeTopping('${this.id}', ${index})">X</span></li>`;
     });
     return template;
   }
